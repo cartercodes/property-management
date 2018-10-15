@@ -1,4 +1,7 @@
 .header-wrapper {
+    grid-row: header-s/header-e;
+    grid-column: content-s/content-e;
+
     display: grid;
     grid-template-columns: [s] 1fr [e];
     grid-template-rows: [title-s] 3rem [title-e sub-s] 2rem [sub-e];
@@ -12,8 +15,9 @@
         grid-column: s/e;
     }
 }
- .header-wrapper {
-     padding-top: 4rem;
+
+.header-wrapper {
+    padding-top: 4rem;
     
     &__title {
         font-size: 2.4rem;
@@ -26,4 +30,4 @@
         font-weight: 300;
         line-height: 2rem;
     }
-} 
+}
