@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 export function FormTitle(props) {
     const { className, text } = props;
     return (
