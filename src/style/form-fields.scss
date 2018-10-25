@@ -1,11 +1,16 @@
+
+// INPUT
+
 .form-input {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 129px 500px;
-     align-items: center;
+
+    align-items: center;
     width: 629px;
     justify-content: center;
-     &__title {
+
+    &__title {
         grid-row: 1/-1;
         grid-column: 1/2;
     }
@@ -14,7 +19,8 @@
         grid-column: 2/3;
     }
 }
- .form-input {
+
+.form-input {
     &__title {
         color: $color-red-BA;
         font-size: 1.8rem;
@@ -30,21 +36,21 @@
         font-size: 1.6rem;
         font-weight: 500;
     }
-} 
+}
 
 // BUTTON
 
 .form-button {
     &__button {
-      height: 4rem;
-      width: 21.6rem;
-      border-radius: 2rem;
-      background-color: $color-red-BA;
+        height: 4rem;
+        width: 21.6rem;
+        border-radius: 2rem;
+        background-color: $color-red-BA;
 
-      color: white;
-      font-size: 2.2rem;
-      font-weight: 500;
-      line-height: 2.8rem;
-      text-align: center;
+        color: white;
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 2.8rem;
+        text-align: center;
     }
 }
