@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
-import { reduxForm, Field } from 'redux-form'
+import React, { Component } from 'react';
+import { reduxForm, Field } from 'redux-form';
 
-import { FormTitle } from '../formTitle'
-import { FormInput } from '../formFields'
+import { FormTitle } from '../formTitle';
+import { FormInput, FormButton } from '../formFields';
+import TextLink from '../textLink';
 
 class SigninForm extends Component {
   render () {
@@ -15,16 +16,31 @@ class SigninForm extends Component {
           name='email'
           type='email'
           title='email'
-          component={FormInput} />
+          component={FormInput}
+        />
         <Field
           className='sign-in-form__password'
           placeholder='Enter Password'
           name='password'
           type='password'
           title='password'
-          component={FormInput} />
+          component={FormInput}
+        />
+        <Field
+          className='sign-in-form__login'
+          name='login'
+          type='submit'
+          title='Login'
+          component={FormButton}
+        />
+
+          <div className="sign-in-form__text-links">
+            <TextLink to='/forgot' text='Forgot Password'/>
+            <TextLink to='/signup' text='Not a memeber? Register here'/>
+          </div>
+
       </form>
-    )
+    );
   }
 }
 
@@ -32,4 +48,4 @@ SigninForm = reduxForm({
   form: 'signin'
 })(SigninForm)
 
-export default SigninForm
+export default SigninForm;
