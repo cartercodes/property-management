@@ -23,7 +23,9 @@ class Dashboard extends Component {
     }
     render() {
       return (
+          <div className='dashboard'>
           <TabNav tabs={this.state.tabs}/>
+          </div>
       )
     }
 }
