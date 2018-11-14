@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+
 import TabNav from './tabnav';
 
 class Dashboard extends Component {
@@ -9,25 +10,31 @@ class Dashboard extends Component {
         this.state = {
             tabs: [
                 {
-                    title: "Newsletter",
-                    active: false,
-                    component: <h4>Hey There = Newsletter</h4>
+                    title: 'Newsletter',
+                    active: true,
+                    component: <h4>Hey There - Newsletter</h4>
                 },
                 {
-                    title: "Requests",
+                    title: 'Requests',
                     active: false,
-                    component: <h4>Hey There = Requests</h4> 
+                    component: <h4>Hey There - Requests</h4>
                 },
             ]
         }
     }
-    render() {
-      return (
-          <div className='dashboard'>
-          <TabNav tabs={this.state.tabs}/>
-          </div>
-      )
+
+    handleTabChange = (title) => {
+        console.log('clicked on tab', title);
     }
+
+  render() {
+    return (
+        <div className='dashboard'>
+            <TabNav handleClick={(title) => this.handleTabChange(title)} tabs={this.state.tabs}/>
+        </div>
+    )
+  }
+
 }
 
 export default Dashboard;
