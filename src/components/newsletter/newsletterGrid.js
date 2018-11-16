@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 
+import NewsletterBox from './newsletterBox';
+
 class NewsletterGrid extends Component {
-    render () {
+    render() {
         return (
             <div className='newsletter-grid'>
-            asdkjashdgkjshfdg
+                {/* add button */}
+                <NewsletterBox date={new Date()}/>
+                {/* archive */}
+                {/* content */}
             </div>
         )
     }
 }
 
-export default NewsletterGrid
+export default NewsletterGrid;
