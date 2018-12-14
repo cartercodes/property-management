@@ -1,8 +1,15 @@
+
 import {
     signUp,
     signIn
 } from './auth';
- export {
+
+import { 
+    fetchNewsletters
+} from './newsletter';
+
+export {
     signUp,
-    signIn
-}; 
+    signIn,
+    fetchNewsletters
+};
