@@ -1,6 +1,8 @@
 import React, { Component } from "react";
- import NewNewsletterForm from "./newsletterNewForm";
- class EditNewsletter extends Component {
+
+import NewNewsletterForm from "./newsletterNewForm";
+
+class EditNewsletter extends Component {
   onSubmit = fields => {
     // if(button == 'submit') {
     //   // save new newsletter on the backend. perform a post request here.
@@ -8,10 +10,17 @@ import React, { Component } from "react";
     // }
     this.props.history.push("/dashboard");
   };
-   onCancel = () => {
+
+  onCancel = () => {
     this.props.history.push("/dashboard");
   };
-   render() {
+
+  componentDidMount() {
+      //this.props.fetchNewsletterWithId()
+      console.log(this.props.match.params.id);
+  }
+
+  render() {
     return (
       <div className="new-newsletter">
         <NewNewsletterForm
@@ -23,4 +32,5 @@ import React, { Component } from "react";
     );
   }
 }
- export default EditNewsletter;
+
+export default EditNewsletter;
