@@ -12,6 +12,7 @@ export class FormInput extends Component {
                     type={type}
                     {...input}
                     placeholder={placeholder}
+                    value={editValue ? editValue : input.value}    
                 />
             </div>
         )
@@ -28,12 +29,10 @@ export class FormTextArea extends Component {
                     className='form-textarea__input'
                     type={type}
                     {...input}
-                    placeholder={placeholder}
-
-                    value={editValue ? editValue : input.value}
-
+                    placeholder={placeholder} 
+                    value={editValue ? editValue : ''}   
                 >
-
+                
                 </textarea>
             </div>
         )
@@ -43,7 +42,7 @@ export class FormTextArea extends Component {
 
 export class FormButton extends Component {
     render() {
-        const { className, title, input, small, danger, onClick } = this.props;
+        const { className, title, input, type, small, danger, onClick } = this.props;
         return (
             <div className={`${className} ${small ? 'form-button-small' : 'form-button'}`}>
                 <button
@@ -52,10 +51,10 @@ export class FormButton extends Component {
                         ${danger ? 'form-button-small__danger' : ''}
                     `}
                     type={type}
-                    {...input}
+                    {...input} 
                     onClick={onClick}
                 >
-                    {title}
+                {title}
                 </button>
             </div>
         )
@@ -70,14 +69,14 @@ export class FormImage extends Component {
     }
 
     render() {
-        const { className, title, input, type, imageUrl } = this.props;
+        const { className, title, input, imageUrl } = this.props;
         return (
             <div className={`${className} form-image`}>
                 <label className='form-image__title'>{title}</label>
                 <img
                     id='newsletter-new-image'
                     className='form-image__image'
-                    src={imageUrl}
+                    src={imageUrl} 
                 />
                 <input
                     className='form-image__replace'
@@ -88,15 +87,15 @@ export class FormImage extends Component {
                         () => document.getElementById('file') ? document.getElementById('file').click() : ''
                     }
                 />
-                <input {...input}
-                    type='file'
-                    style={{ display: 'none' }}
-                    id='file'
-                    name='file'
-                    accepts='image/*'
-                    value={undefined}
-                    onChange={this.handleSelectedImage}
-                />
+                <input {...input} 
+                        type='file'
+                        style={{display: 'none'}}
+                        id='file'
+                        name='file'
+                        accepts='image/*'
+                        value={undefined}
+                        onChange={this.handleSelectedImage}
+                        />
                 {/* replace button/input goes here */}
             </div>
         )
