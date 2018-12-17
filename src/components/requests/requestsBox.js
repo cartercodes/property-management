@@ -3,11 +3,11 @@ import React, { Component } from 'react';
     render() {
         const { count, title } = this.props;
         return (
-            <div className='requests-box'>
+            <a onClick={() => console.log('trya select this box')} className='requests-box-inactive'>
                 <div className='requests-box__count'>{count}</div>
                 <div className='requests-box__title'>{title}</div>
                 <div className='requests-box__point'></div>
-            </div>
+            </a>
         )
     }
 }
