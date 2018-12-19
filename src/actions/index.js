@@ -1,4 +1,3 @@
-
 import {
     signUp,
     signIn
@@ -9,9 +8,14 @@ import {
     fetchNewsletterWithId
 } from './newsletter';
 
+import {
+    changeSelectedRequestType
+} from './requests';
+
 export {
     signUp,
     signIn,
     fetchNewsletters,
-    fetchNewsletterWithId
+    fetchNewsletterWithId,
+    changeSelectedRequestType
 };
