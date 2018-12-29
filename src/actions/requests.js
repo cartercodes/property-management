@@ -1,5 +1,6 @@
 import {
-    CHANGE_SELECTED_REQUEST_TYPE
+    CHANGE_SELECTED_REQUEST_TYPE,
+    SET_REQUESTS
 } from './types';
 
 import axios from 'axios';
@@ -16,7 +17,7 @@ export function changeSelectedRequestType(boxType) {
 
 export function createNewRequest(userId, formData, success) {
     const token = localStorage.getItem('token');
-    return function () {
+    return function (dispatch) {
         axios.post(`${ROOT_URL}/requests/new`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
@@ -24,8 +25,10 @@ export function createNewRequest(userId, formData, success) {
             }
         })
         .then(response => {
-            console.log(response.data);
-            success();
+            dispatch({
+                type: SET_REQUESTS,
+                payload: response.data
+            })
         })
         .catch(err => {
             console.log(err);
