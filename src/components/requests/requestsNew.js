@@ -10,12 +10,12 @@ class NewRequest extends Component {
   onSubmit = fields => {
     const { title, body, image } = fields;
 
-    var formDate =new FormData();
-    formdata.append('title', title);
+    var formData =new FormData();
+    formData.append('title', title);
     formData.append('body', body);
     formData.append('image', image);
 
-    this.props.createNewRequest(this.props._id, fields, () => {
+    this.props.createNewRequest(this.props._id, formData, () => {
       this.props.history.push("/dashboard");
     })
     
