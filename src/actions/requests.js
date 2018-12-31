@@ -17,40 +17,52 @@ export function changeSelectedRequestType(boxType) {
 
 export function createNewRequest(userId, formData, success) {
     const token = localStorage.getItem('token');
-    return function (dispatch) {
+    return function () {
         axios.post(`${ROOT_URL}/requests/new`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
                 authorization: token
             }
         })
-        .then(response => {
-            dispatch({
-                type: SET_REQUESTS,
-                payload: response.data
+            .then(response => {
+                console.log(response.data);
+                success();
             })
-        })
-        .catch(err => {
-            console.log(err);
-        })
+            .catch(err => {
+                console.log(err);
+            })
     }
 }
 
 export function fetchRequests() {
     const token = localStorage.getItem('token');
-    return function(dispatch) {
+    return function (dispatch) {
         axios.get(`${ROOT_URL}/requests`, {
             headers: { authorization: token }
         })
-        .then(response => {
-            dispatch({
-                type: SET_REQUESTS,
-                payload: response.data
+            .then(response => {
+                dispatch({
+                    type: SET_REQUESTS,
+                    payload: response.data
+                })
             })
-            //  dispatch an action to set our requests
+            .catch(err => {
+                console.log(err);
+            })
+    }
+}
+
+export function changeStatus({ _id, status }) {
+    const token = localStorage.getItem('token');
+    return function () {
+        axios.post(`${ROOT_URL}/requests/update-status`, { _id, status }, {
+            headers: { authorization: token }
         })
-        .catch(err => {
-            console.log(err);
-        })
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 }
