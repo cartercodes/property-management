@@ -52,7 +52,7 @@ export function fetchRequests() {
     }
 }
 
-export function changeStatus({ _id, status } success) {
+export function changeStatus({ _id, status }, success) {
     const token = localStorage.getItem('token');
     return function () {
         axios.post(`${ROOT_URL}/requests/update-status`, { _id, status }, {
@@ -60,10 +60,10 @@ export function changeStatus({ _id, status } success) {
         })
             .then(response => {
                 console.log(response.data);
+                success();
             })
             .catch(err => {
                 console.log(err);
-                success();
             })
     }
 }
