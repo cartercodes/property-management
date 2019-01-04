@@ -16,7 +16,7 @@ export default function(state = INITIAL_STATE, action) {
                 ...state,
                 selectedRequestType: boxType
             }
-        case SET_REQUESTS:
+        case SET_REQUESTS: 
             return {
                 ...state,
                 requests: action.payload
