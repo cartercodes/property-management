@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-import SignupForm from './signupForm'
+import SignupForm from './signupForm';
 
 class Signup extends Component {
 
@@ -13,10 +13,14 @@ class Signup extends Component {
         })
     }
 
+    componentDidMount() {
+        this.props.updateHeader('Welcome to HOA Manager!', 'Please login to continue', false);
+    }
+
     render() {
-        return ( 
+        return (
             <div className='sign-up'>
-            <SignupForm onSubmit={(event) => this.onSubmit(event)}/>
+                <SignupForm onSubmit={(event) => this.onSubmit(event)}/>
             </div>
         )
     }

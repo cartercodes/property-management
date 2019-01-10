@@ -1,6 +1,7 @@
 .new-newsletter-form {
     display: grid;
     grid-template-columns: [s input-s] 1020px [input-e] 1fr [e];
+    
 
     &__title {
         width: 100%;
@@ -18,17 +19,17 @@
     &__body {
         grid-row: 3;
         margin-top: 2rem;
+        
     }
 
-    &__submit,
-    &__cancel {
+    &__submit, 
+        &__cancel {
         grid-column: 1/-1;
         grid-row: 1;
         justify-self: end;
         align-self: end;
-
-        margin-left: .2rem;
         margin-bottom: 1.2rem;
+        margin-right: .2rem;
     }
 
     &__cancel {

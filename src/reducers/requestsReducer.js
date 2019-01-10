@@ -8,7 +8,7 @@ const INITIAL_STATE = {
     selectedRequestType: 'pending'
 }
 
-export default function(state = INITIAL_STATE, action) {
+export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
         case CHANGE_SELECTED_REQUEST_TYPE:
             const boxType = action.payload
@@ -16,7 +16,7 @@ export default function(state = INITIAL_STATE, action) {
                 ...state,
                 selectedRequestType: boxType
             }
-        case SET_REQUESTS: 
+        case SET_REQUESTS:
             return {
                 ...state,
                 requests: action.payload

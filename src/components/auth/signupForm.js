@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
- import { FormTitle } from "../formTitle";
+
+import { FormTitle } from "../formTitle";
 import { FormInput, FormButton } from "../formFields";
 import TextLink from "../textLink";
- class SignupForm extends Component {
+
+class SignupForm extends Component {
   render() {
 
     const { handleSubmit } = this.props;
@@ -58,7 +60,9 @@ import TextLink from "../textLink";
     );
   }
 }
- SignupForm = reduxForm({
+
+SignupForm = reduxForm({
   form: "signup"
 })(SignupForm);
- export default SignupForm;
+
+export default SignupForm;

@@ -1,4 +1,3 @@
-
 // INPUT
 
 .form-input,
@@ -31,7 +30,7 @@
         height: 4rem;
         // width: 50rem;
         width: 100%;
-        border: 1px solid $color-grey-E6;
+        border: 1px solid $color-gray-E6;
         border-radius: .5rem;
         padding-left: 2rem;
         font-size: 1.6rem;
@@ -55,16 +54,21 @@
 .form-button,
 .form-button-small,
 .form-image {
-    &__button,
-    &__replace {
-        transition: all .2s ease;
-        &:focus {
-            outline: none;
-        }
-        &:active {
-            transform: scale(0.95) translateY(2.05px);
-        }
+    
+  &__button,
+  &__replace {
+    transition: all .2 ease;
+    &:focus {
+      outline: none;
+      
     }
+
+    &:active {
+      transform: scale(0.95) translateY(2.05px);
+    }
+    
+  }
+ 
 }
 
 .form-button {
@@ -83,9 +87,10 @@
 }
 
 .form-button-small {
+
     &__button {
         border-radius: 1.6rem;
-        border: 1px solid $color-grey-4D;
+        border: 1px solid $color-gray-4D;
         width: 7.4rem;
         height: 2.4rem;
     
@@ -97,51 +102,51 @@
     }
 
     &__danger {
-        border: 1px solid $color-red-BA;
+        background-color: $color-red-BA;
         color: white;
         background-color: $color-red-BA;
     }
 }
 
-// IMAGE
+//IMAGE
 .form-image {
     display: grid;
     grid-template-rows: [title-s] 1fr [title-e image-s] 13.7rem [image-e];
-    grid-template-columns: [s] 16rem [e];
+    grid-template-columns: [s]16rem[e];
 
     & > * {
         grid-column: s/e;
     }
 
-    &__title {
+    &__title{
         @include red-title;
         margin-bottom: 2rem;
-        grid-row: title-s/title-e;
+        grid-row: title-s/title-s
     }
-    &__image {
-        height: 13.7rem;
+
+    &__image{
         width: 16rem;
-        border: none;
+        height: 13.7rem;
         background-color: rgb(218, 218, 218);
         grid-row: image-s/image-e;
         object-fit: cover;
     }
-    &__replace {
+    &__replace{
         border-radius: 1.6rem;
         border: 1px solid white;
         background-color: white;
-
         width: 13rem;
         height: 2.4rem;
     
         font-size: 1.4rem;
         line-height: 1.7rem;
         text-align: center;
-
         color: $color-red-BA;
         grid-row: image-s/image-e;
 
         justify-self: center;
         align-self: center;
+        cursor: pointer;
     }
 }
+

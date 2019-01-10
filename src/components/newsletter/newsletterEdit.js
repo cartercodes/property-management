@@ -5,12 +5,20 @@ import * as actions from '../../actions';
 import EditNewsletterForm from "./newsletterEditForm";
 
 class EditNewsletter extends Component {
+
   onSubmit = fields => {
-    // if(button == 'submit') {
-    //   // save new newsletter on the backend. perform a post request here.
-    //   console.log('trying to submit to backend.');
-    // }
-    this.props.history.push("/dashboard");
+
+    const { title, body, image } = fields;
+
+    var formData = new FormData();
+    formData.append('title', title);
+    formData.append('body', body);
+    formData.append('image', image);
+  
+    this.props.editNewsletter(this.props.match.params.id, formData, () => {
+        this.props.history.push("/dashboard");
+    })
+
   };
 
   onCancel = () => {
@@ -35,5 +43,6 @@ class EditNewsletter extends Component {
     );
   }
 }
+
 
 export default connect(null, actions)(EditNewsletter);

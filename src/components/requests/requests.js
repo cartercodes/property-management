@@ -10,8 +10,8 @@ class Requests extends Component {
             <div className='requests'>
                 {
                     this.props.requests.map(requestItem => {
-                    if(requestItem.status == this.props.selectedRequestType) {
-                        return <RequestsItem {...requestItem} key={requestItem._id}/>
+                        if(requestItem.status == this.props.selectedRequestType) {
+                            return <RequestsItem {...requestItem} key={requestItem._id}/>
                         }
                     })
                 }
@@ -28,4 +28,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Requests);
+export default connect(mapStateToProps)(Requests)

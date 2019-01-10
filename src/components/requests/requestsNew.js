@@ -8,15 +8,16 @@ import NewNewsletterForm from "../newsletter/newsletterNewForm";
 class NewRequest extends Component {
 
   onSubmit = fields => {
+
     const { title, body, image } = fields;
 
-    var formData =new FormData();
+    var formData = new FormData();
     formData.append('title', title);
     formData.append('body', body);
     formData.append('image', image);
 
     this.props.createNewRequest(this.props._id, formData, () => {
-      this.props.history.push("/dashboard");
+        this.props.history.push("/dashboard");
     })
     
   };

@@ -6,8 +6,9 @@ class NewsletterBox extends Component {
     render() {
         const { date } = this.props;
         if(!date) {
-            return <div>...fetching</div>
+            return <div>fetching...</div>
         }
+        const parsedDate = new Date(date);
         return (
             <div className='newsletter-box'>
                 <div className='newsletter-box__day'>{parsedDate.getDate()}</div>

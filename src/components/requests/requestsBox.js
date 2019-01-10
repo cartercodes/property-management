@@ -6,8 +6,6 @@ import * as actions from '../../actions';
 class RequestsBox extends Component {
     render() {
         const { count, title, icon } = this.props;
-        console.log(count)
-        console.log(title)
         const className = `requests-box ${this.props.selectedRequestType == title ? 'requests-box-active' : 'requests-box-inactive'}`
         return (
             <a onClick={() => this.props.changeSelectedRequestType(title)} className={className}>

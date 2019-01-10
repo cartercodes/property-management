@@ -8,6 +8,8 @@ import Button from '../button';
 import RequestsBoxes from './requestsBoxes';
 import Requests from './requests';
 
+import RequireAdmin from '../auth/requireAdmin';
+
 class RequestsGrid extends Component {
 
     handleAddRequest = () => {
@@ -18,11 +20,12 @@ class RequestsGrid extends Component {
         this.props.fetchRequests()
     }
 
-
     render() {
         return (
             <div className='requests-grid'>
-                <Button className='requests-grid__button' icon='fas fa-plus' callback={() => this.handleAddRequest()}/>
+                <RequireAdmin>
+                    <Button className='requests-grid__button' icon='fas fa-plus' callback={() => this.handleAddRequest()}/>
+                </RequireAdmin>
                 <RequestsBoxes/>
                 <Requests/>
             </div>
